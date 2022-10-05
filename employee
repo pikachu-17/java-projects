@@ -1,0 +1,41 @@
+
+public class Employee
+{
+    String name;
+    int code;
+    double basic, hra, da, pf;
+    double net=0.0d;
+    public Employee()
+    {
+       basic=0.0d;
+       hra=0.0d;
+       da=0.0d;
+       pf=0;
+    }
+    public Employee(int id, String namee, double b)
+    {
+        code=id;
+        basic=b;
+        name=namee;
+    }
+    public void calculate()
+    {
+        hra=0.10*basic;
+        da=0.55*basic;
+        net=(basic+da+hra)-pf;
+    }
+    public void display()
+    {
+        System.out.println("Employee id\t"+code);
+        System.out.println("Employee name\t"+name);
+        System.out.println("HRA\t"+hra);
+        System.out.println("da\t"+da);
+        System.out.println("net\t"+net);
+    }
+    public static void main()
+    {
+        Employee obj=new Employee(1,"ABCD",100000.0);
+        obj.calculate();
+        obj.display();
+    }
+}
