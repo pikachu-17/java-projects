@@ -1,21 +1,20 @@
 import java.util.*;
-public class nospace
-{
+
+public class prog {
     public static void main()
-    
+
     {
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter a Sentence");
-        String str=sc.next();
-        int len=str.length();
-        
-        String nstr="";
-        for(int i=0;i<=len;i++)
-        {
-            char ch=str.charAt(i);
-            if(!Character.isWhitespace(ch))
-            nstr=nstr+ch;
+        String str = sc.next();
+        int len = str.length();
+
+        String nstr = "";
+        for (int i = 0; i <= len; i++) {
+            char ch = str.charAt(i);
+            if (!Character.isWhitespace(ch))
+                nstr = nstr + ch;
         }
-        System.out.println("New string: "+nstr);
+        System.out.println("New string: " + nstr);
     }
 }
