@@ -10,12 +10,12 @@ class HuffmanNode {
 }
 
 class MyComparator implements Comparator<HuffmanNode> {
-    public int compare(HuffmanNode x, HuffmanNode y){
+    public int compare(HuffmanNode x, HuffmanNode y) {
         return x.data - y.data;
     }
 }
 
-public class Huffman {
+public class HuffmanEncoding {
     public static void printCode(HuffmanNode root, String s) {
         if (root.left == null && root.right == null && Character.isLetter(root.c)) {
             System.out.println(root.c + ":" + s);
@@ -25,11 +25,12 @@ public class Huffman {
         printCode(root.left, s + "0");
         printCode(root.right, s + "1");
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int n = 6;
         char[] charArray = { 'a', 'b', 'c', 'd', 'e', 'f' };
-        int[] charFreq = { 22,11,44,20,5,2 };
+        int[] charFreq = { 22, 11, 44, 20, 5, 2 };
 
         PriorityQueue<HuffmanNode> q = new PriorityQueue<HuffmanNode>(n, new MyComparator());
         for (int i = 0; i < n; i++) {
@@ -59,4 +60,3 @@ public class Huffman {
         printCode(root, "");
     }
 }
-
